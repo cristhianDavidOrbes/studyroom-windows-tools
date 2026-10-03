@@ -2,7 +2,7 @@
 
 ## Estado actual: PENDIENTE
 
-StudyRoom Windows Tools prepara una solicitud de firma gratuita a SignPath Foundation para este componente de código abierto. **No se ha recibido aprobación, no se ha obtenido un certificado de la Fundación y no se afirma que las descargas actuales estén firmadas.** Esta política no acredita por sí sola el envío o aceptación de la solicitud. La firma y su identidad se documentarán únicamente cuando exista una aprobación real y un resultado verificable.
+El titular envió la solicitud de firma gratuita a SignPath Foundation para este componente de código abierto. El formulario oficial confirmó «Form submitted». **No se ha recibido aprobación, no se ha obtenido un certificado de la Fundación y no se afirma que las descargas actuales estén firmadas.** La firma y su identidad se documentarán únicamente cuando exista una aprobación real y un resultado verificable.
 
 No se atribuye a SignPath la firma de versiones anteriores o actuales. No se utiliza el aviso «firma proporcionada por SignPath» mientras la entidad no haya aceptado el proyecto y firmado sus artefactos.
 

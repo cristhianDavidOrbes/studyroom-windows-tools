@@ -6,7 +6,7 @@ Este repositorio contiene únicamente el helper de Windows. La web, videollamada
 
 ## Estado de la firma
 
-**Firma de confianza pendiente.** Se prepara una solicitud a SignPath Foundation; todavía no se ha obtenido su aprobación ni certificado. La descarga directa actual no tiene firma de publicador y Windows puede bloquearla. Un análisis antivirus sin amenazas o una lista SHA256 no sustituyen una firma. Respeta los avisos de Windows: el proyecto no pide desactivar protecciones ni instalar certificados autofirmados.
+**Firma de confianza pendiente.** El titular envió la solicitud a SignPath Foundation; todavía no se ha obtenido su aprobación ni certificado. La descarga directa actual no tiene firma de publicador y Windows puede bloquearla. Un análisis antivirus sin amenazas o una lista SHA256 no sustituyen una firma. Respeta los avisos de Windows: el proyecto no pide desactivar protecciones ni instalar certificados autofirmados.
 
 Consulta la [política de firma de código / Code signing policy](CODE_SIGNING.md) para conocer el estado, responsables y requisitos.
 
