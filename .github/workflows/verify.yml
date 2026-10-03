@@ -1,0 +1,58 @@
+name: Verify Windows tools
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-tools-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Check out the exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7; upstream tag verified
+        with:
+          persist-credentials: false
+
+      - name: Compile and test the tools and embedded installer
+        # Runs isolated test executables only; never starts the app or installer.
+        run: .\scripts\desktop\build.ps1 -Test
+
+      - name: Record installer integrity without changing the embedded manifest
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $artifactRoot = Join-Path $env:GITHUB_WORKSPACE 'apps/desktop/dist'
+          $installerPath = Join-Path $artifactRoot 'Instalar-StudyRoom.exe'
+          $installerHash = (Get-FileHash -LiteralPath $installerPath -Algorithm SHA256).Hash.ToLowerInvariant()
+          [IO.File]::WriteAllText((Join-Path $artifactRoot 'Instalar-StudyRoom.exe.sha256'),$installerHash+'  Instalar-StudyRoom.exe'+[Environment]::NewLine,[Text.UTF8Encoding]::new($false))
+          Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE 'LICENSE') -Destination (Join-Path $artifactRoot 'LICENSE')
+
+      - name: Preserve the unsigned build for review
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4; upstream tag verified
+        with:
+          name: studyroom-windows-tools-unsigned-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 7
+          path: |
+            apps/desktop/dist/StudyRoom.Tools.exe
+            apps/desktop/dist/Instalar-StudyRoom.exe
+            apps/desktop/dist/StudyRoom.Tools.exe.config
+            apps/desktop/dist/SHA256SUMS.txt
+            apps/desktop/dist/Instalar-StudyRoom.exe.sha256
+            apps/desktop/dist/Iniciar-Herramientas.cmd
+            apps/desktop/dist/Instalar-Herramientas.cmd
+            apps/desktop/dist/Desinstalar-Herramientas.cmd
+            apps/desktop/dist/LEEME.txt
+            apps/desktop/dist/LICENSE
+            apps/desktop/StudyRoom.Tools.exe.manifest

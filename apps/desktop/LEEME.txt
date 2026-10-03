@@ -1,0 +1,67 @@
+HERRAMIENTAS STUDYROOM PARA WINDOWS
+
+FORMA RECOMENDADA
+Descarga Instalar-StudyRoom.exe desde StudyRoom y ábrelo una vez.
+El instalador contiene todos los archivos: no tienes que extraer un ZIP.
+Instala solo para tu usuario, sin pedir administrador, e inicia las herramientas
+en segundo plano. Solo confirma «Listo» cuando las herramientas responden.
+Vuelve a StudyRoom, espera «La aplicación ya está instalada» y pulsa Continuar.
+Al entrar a Windows se inician solas en segundo plano. El menú solo aparece
+cuando compartes pantalla y se oculta cuando terminas.
+Si el navegador solicita acceso a aplicaciones locales, permite StudyRoom.
+La página no puede instalar un ZIP ni inspeccionar tu carpeta Descargas.
+
+ZIP DE RESPALDO (opcional)
+Extrae TODO el ZIP antes de abrir Iniciar-Herramientas.cmd o Instalar-Herramientas.cmd.
+Requiere Windows con .NET Framework 4.8 (integrado en Windows 10/11 actuales).
+No instala un modelo de IA ni necesita una cuenta. No tiene red externa, captura ni micrófono.
+
+El botón verde con lápiz aparece arriba a la derecha. Ábrelo para elegir lápiz, línea, flecha,
+rectángulo, elipse, texto o borrador de un objeto. Hay color, grosor, tamaño de texto,
+deshacer, rehacer y borrar todas las marcas. Las marcas solo viven en memoria.
+Puedes pulsar los botones y desplegables del menú con Lápiz u otra herramienta activa.
+No hace falta pulsar Esc para cambiar de herramienta, color, grosor o tamaño de texto.
+Esc o Interactuar permiten usar Windows sin que el lienzo intercepte los clics.
+Contraer también vuelve a Interactuar. Arrastra el encabezado para mover el panel.
+El selector permite colocar el panel en otro monitor; cada monitor conserva sus marcas.
+
+Para que los participantes vean las marcas, comparte PANTALLA COMPLETA desde el navegador.
+Compartir solo una pestaña o ventana generalmente no incluye una superposición del escritorio.
+No se captura la pantalla automáticamente. Evita mostrar datos personales durante la llamada.
+
+INTEGRACIÓN CON STUDYROOM
+Instalar-StudyRoom.exe (o Instalar-Herramientas.cmd del ZIP de respaldo) copia exclusivamente
+sus archivos a AppData Local de tu usuario, registra studyroom-tools://open en HKCU
+y añade una entrada propia de inicio de Windows en HKCU para esperar en segundo plano.
+No requiere administrador ni modifica políticas de PowerShell.
+El navegador puede pedir confirmación para abrir la aplicación externa.
+Desinstalar-Herramientas.cmd retira ese protocolo y los archivos propios; cierra primero la app.
+Ejecuta la desinstalación desde la carpeta original del ZIP para poder retirar el EXE instalado.
+Esta descarga aún no tiene firma de publicador. Smart App Control puede bloquearla
+aunque un análisis antivirus no encuentre amenazas. El instalador no desactiva ni
+cambia tus protecciones. Si Windows bloquea el publicador, se necesita una
+distribución firmada de confianza; no omitas el bloqueo. Un hash no sustituye la firma.
+Si se copiaron los archivos pero la herramienta no responde, el instalador lo informa
+y la página no la da por disponible. La distribución mediante Microsoft Store está
+en preparación y todavía no se ha publicado ni certificado.
+
+MULTIMONITOR Y LÍMITES
+Las marcas usan coordenadas normalizadas por monitor y el proceso solicita DPI por monitor V2.
+Un trazo no cruza físicamente de un monitor a otro: inicia otro trazo en el segundo monitor.
+Cambiar monitores vuelve a Interactuar. No dibuja sobre el escritorio seguro de UAC,
+pantalla de bloqueo ni aplicaciones en pantalla completa exclusiva.
+Máximo 300 objetos y 100000 puntos por monitor; 3000 puntos por trazo.
+Deshacer/rehacer se limita al monitor usado más recientemente y conserva hasta 30 cambios,
+con un límite adicional de memoria. No es una pizarra en la web.
+
+AL COMPARTIR EN STUDYROOM
+El compañero se comunica solo con el navegador de este PC mediante 127.0.0.1:8790.
+Recibe únicamente un identificador aleatorio y si se comparte; nunca contenido ni credenciales.
+Se muestra al compartir y desaparece al terminar, o tras ocho segundos sin señal.
+Las marcas e historial se limpian al acabar la última presentación. Si pulsas x durante
+la presentación vuelve contraído. Varias pestañas pueden compartir sin cerrar la otra.
+La instalación lo inicia en segundo plano y al entrar a Windows. La página comprueba
+que la aplicación esté disponible mediante una consulta local que no activa el menú,
+no captura datos y no altera la presentación. Acepta el permiso de acceso local del navegador.
+
+Ocultar: botón x. Salir del programa: icono StudyRoom, Salir completamente.

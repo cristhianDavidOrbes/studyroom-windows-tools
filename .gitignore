@@ -1,0 +1,34 @@
+# Local build and test outputs; CI artifacts are uploaded separately.
+**/dist/
+**/bin/
+**/obj/
+test-results/
+coverage/
+*.exe
+*.dll
+*.pdb
+*.zip
+*.msix
+*.msixbundle
+
+# Local settings, logs and signing material never belong in this source repo.
+.env
+.env.*
+.local/
+*.log
+*.tmp
+*.pfx
+*.p12
+*.pem
+*.key
+credentials*.json
+service-account*.json
+
+.vs/
+.DS_Store
+Thumbs.db
+
+# Local review evidence preceding public licensing.
+/README-CANDIDATE.md
+/VALIDATION-CANDIDATE.json
+/SHA256SUMS.txt
